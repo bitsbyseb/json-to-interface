@@ -1,7 +1,7 @@
-import * as monaco from "monaco-editor";
+import { editor } from "monaco-editor";
 import {dracula} from "../themes/dracula";
 
-monaco.editor.defineTheme("default",dracula);
+editor.defineTheme("default",dracula);
 
 export function createNewEditor(
     container: HTMLElement,
@@ -57,7 +57,7 @@ export function createNewEditor(
             }
         },
     };
-    return monaco.editor.create(container, {
+    return editor.create(container, {
         value: template,
         language: language,
         theme: "default",
