@@ -1,4 +1,4 @@
-import { interfaceItem,objectWithSignatures } from "../models/interface.model";
+import type { interfaceItem,objectWithSignatures } from "../models/interface.model";
 import getArrayContentType from './getArrayContent';
 
 export default function toInterfaceConstructor(input: string, name: string) {

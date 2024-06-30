@@ -1,4 +1,4 @@
-import { interfaceItem,attribute } from "../models/interface.model";
+import type { interfaceItem,attribute } from "../models/interface.model";
 import sentenceCase from "./sentenceCase";
 
 export default function toPureInterface(input: interfaceItem) {
