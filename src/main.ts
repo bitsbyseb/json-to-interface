@@ -2,8 +2,8 @@ import toInterfaceConstructor from "./utils/toInterfaceConstructor";
 import toPureInterface from "./utils/toPureInterface";
 import { createNewEditor } from "./utils/createNewEditor";
 
-const jsonContainer: HTMLInputElement | null = document.querySelector("#json");
-const interfaceContainer: HTMLParagraphElement | null = document.querySelector(
+const jsonContainer = document.querySelector<HTMLDivElement>("#json");
+const interfaceContainer= document.querySelector<HTMLParagraphElement>(
     "#interface",
 );
 const submitButton = document.getElementById("submit");

@@ -1,12 +1,12 @@
 import type {
-    interfaceItem,
-    objectWithSignatures,
+    InterfaceItem,
+    ObjectWithSignatures,
 } from "../models/interface.model";
 import getArrayContentType from "./getArrayContent";
 
 export default function toInterfaceConstructor(input: string, name: string) {
-    let interfaceInstance: interfaceItem = { name, attributes: [] };
-    const asObject: objectWithSignatures = JSON.parse(input);
+    let interfaceInstance: InterfaceItem = { name, attributes: [] };
+    const asObject: ObjectWithSignatures = JSON.parse(input);
 
     for (let property in asObject) {
         const value = asObject[property];

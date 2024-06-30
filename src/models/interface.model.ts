@@ -1,13 +1,8 @@
-export interface attribute {
-    readonly name: string,
-    readonly type: string
-}
+export type Attribute = Readonly<{
+    name: string,
+    type: string
+}>;
 
-export interface objectWithSignatures extends Object {
-    [key: string]: unknown;
-}
+export type ObjectWithSignatures = Record<string,unknown>;
 
-export interface interfaceItem {
-    readonly name: string,
-    attributes: (attribute | interfaceItem)[]
-}
+export type InterfaceItem = Readonly<Pick<Attribute,'name'> & {attributes:(Attribute|InterfaceItem)[]}>
