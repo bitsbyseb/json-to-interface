@@ -9,20 +9,16 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <script defer type="module" src="./src/main.ts"></script>
 </head>
-
 <body>
-  <main class="w-screen h-screen flex flex-col justify-center items-center overflow-hidden bg-[#0E0D11]">
-    <h2 class="text-white mt-4 text-4xl font-bold text-center">JSON To <span
-        class="bg-[#7359F8] px-4 py-2 rounded-lg text-white">Interface</span></h2>
-    <section
-      class="w-screen my-4 h-[80%] flex max-sm:flex-col lg:flex-row max-sm:gap-5 justify-center lg:space-x-4 px-4">
-      <div class="max-lg:w-1/2 max-lg:h-full max-sm:w-full max-sm:h-1/2" id="json"></div>
-      <div class="max-lg:w-1/2 max-lg:h-full max-sm:w-full max-sm:h-1/2" id="interface"></div>
+  <main class="w-screen h-screen flex flex-col justify-center items-center bg-[#0E0D11]">
+    <h2 class="text-white mt-4 text-4xl font-bold text-center">JSON To <span class="bg-[#7359F8] px-4 py-2 rounded-lg text-white">Interface</span></h2>
+    <section class="w-screen my-4 h-[80%] flex max-sm:flex-col lg:flex-row max-sm:gap-5 justify-center lg:space-x-4 px-4">
+      <div class="lg:w-1/2 lg:h-full max-sm:w-full max-sm:h-1/2" id="json"></div>
+      <div class="lg:w-1/2 lg:h-full max-sm:w-full max-sm:h-1/2" id="interface"></div>
     </section>
     <button id="submit"
       class="h-auto px-2 py-4 text-2xl rounded-lg bg-[#7359F8] text-white font-bold border-4 border-[#7359F8] active:text-[#7359F8] active:bg-[#0E0D11]">convert
       it</button>
   </main>
 </body>
-
 </html>
