@@ -1,11 +1,13 @@
 import { editor } from "monaco-editor";
-import {dracula} from "../themes/dracula";
+import { dracula } from "../themes/dracula";
 
-editor.defineTheme("default",dracula);
+type allowedLanguages = "json" | "typescript";
+
+editor.defineTheme("default", dracula);
 
 export function createNewEditor(
     container: HTMLElement,
-    language: string,
+    language: allowedLanguages,
     template = "",
 ) {
     self.MonacoEnvironment = {
@@ -29,22 +31,7 @@ export function createNewEditor(
                         "/monaco-editor/esm/vs/language/json/json.worker?worker",
                         label,
                     );
-                case "css":
-                case "scss":
-                case "less":
-                    return getWorkerModule(
-                        "/monaco-editor/esm/vs/language/css/css.worker?worker",
-                        label,
-                    );
-                case "html":
-                case "handlebars":
-                case "razor":
-                    return getWorkerModule(
-                        "/monaco-editor/esm/vs/language/html/html.worker?worker",
-                        label,
-                    );
                 case "typescript":
-                case "javascript":
                     return getWorkerModule(
                         "/monaco-editor/esm/vs/language/typescript/ts.worker?worker",
                         label,

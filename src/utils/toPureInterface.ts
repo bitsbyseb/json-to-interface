@@ -1,4 +1,4 @@
-import type { interfaceItem,attribute } from "../models/interface.model";
+import type { attribute, interfaceItem } from "../models/interface.model";
 import sentenceCase from "./sentenceCase";
 
 export default function toPureInterface(input: interfaceItem) {
@@ -6,7 +6,7 @@ export default function toPureInterface(input: interfaceItem) {
     function execute(input: interfaceItem) {
         const { attributes } = input;
 
-        const asStr = attributes.map(x => {
+        const asStr = attributes.map((x) => {
             const isAttribute = Object.keys(x).includes("type");
 
             if (isAttribute) {
@@ -14,7 +14,11 @@ export default function toPureInterface(input: interfaceItem) {
                 return `\t${name}: ${type}`;
             } else {
                 const { name } = x as interfaceItem;
-                interfaces.push(`interface ${sentenceCase(name)} {\n${execute(x as interfaceItem).asStr.join(",\n")}\n}`);
+                interfaces.push(
+                    `interface ${sentenceCase(name)} {\n${
+                        execute(x as interfaceItem).asStr.join(",\n")
+                    }\n}`,
+                );
                 return `\t${name}:${sentenceCase(name)}`;
             }
         });
@@ -22,7 +26,7 @@ export default function toPureInterface(input: interfaceItem) {
         return {
             interfaces,
             asStr,
-        }
+        };
     }
     return execute(input);
 }

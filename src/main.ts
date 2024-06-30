@@ -9,8 +9,10 @@ const interfaceContainer: HTMLParagraphElement | null = document.querySelector(
 const submitButton = document.getElementById("submit");
 
 if (jsonContainer !== null && interfaceContainer !== null) {
-    const editorJSON = createNewEditor(jsonContainer, "json",
-`{
+    const editorJSON = createNewEditor(
+        jsonContainer,
+        "json",
+        `{
     "id": 3,
     "title": "Code review",
     "description": "Review the latest code commits for the web application.",
@@ -19,8 +21,12 @@ if (jsonContainer !== null && interfaceContainer !== null) {
     "dueDate": "2024-06-28T15:00:00Z",
     "createdAt": "2024-06-24T11:00:00Z",
     "updatedAt": "2024-06-26T14:00:00Z"
-}`);
-    const editorInterface = createNewEditor(interfaceContainer, "typescript",`interface Root {
+}`,
+    );
+    const editorInterface = createNewEditor(
+        interfaceContainer,
+        "typescript",
+        `interface Root {
 	id: number,
 	title: string,
 	description: string,
@@ -29,7 +35,8 @@ if (jsonContainer !== null && interfaceContainer !== null) {
 	dueDate: string,
 	createdAt: string,
 	updatedAt: string
-}`);
+}`,
+    );
 
     submitButton?.addEventListener("click", (e) => {
         e.preventDefault();

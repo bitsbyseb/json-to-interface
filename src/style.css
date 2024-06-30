@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-    --icon-size:100px;
+    --icon-size: 100px;
 }
 
 textarea {
@@ -31,6 +31,7 @@ textarea {
     left: 12px;
     z-index: 1;
 }
+
 #interface {
     position: relative;
 }
